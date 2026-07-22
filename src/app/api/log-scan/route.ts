@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Insert scan entry into Supabase via REST API
-    const dbRes = await fetch(`${supabaseUrl}/rest/v1/scans3`, {
+    const dbRes = await fetch(`${supabaseUrl}/rest/v1/scan4`, {
       method: "POST",
       headers: {
         "apikey": supabaseAnonKey!,
