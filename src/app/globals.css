@@ -1022,38 +1022,63 @@ body {
 }
 
 /* ============================================================
-   CUSTOM NUMERICAL KEYPAD
+   WALLET PAGE FULL CONTAINER (ZERO SCROLL, ABOVE TW BAR)
    ============================================================ */
-.custom-keypad {
+.transfer-main-wallet {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 480px; /* Aligns with form width */
-  background-color: #d2d5db; /* iOS Light Keyboard Background */
-  padding: 4px 5px calc(4px + env(safe-area-inset-bottom, 2px)) 5px;
-  border-top: 0.5px solid #acb0b7;
-  z-index: 1000;
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
-  user-select: none;
-  animation: slide-up-keypad 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  touch-action: manipulation;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px calc(56px + env(safe-area-inset-bottom, 8px)) 12px;
   box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  user-select: none;
 }
 
-@keyframes slide-up-keypad {
-  from { transform: translate(-50%, 100%); }
-  to { transform: translate(-50%, 0); }
+.wallet-content-stack {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ============================================================
+   CUSTOM NUMERICAL KEYPAD (IN FLOW)
+   ============================================================ */
+.custom-keypad {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background-color: #d2d5db;
+  padding: 4px;
+  border-radius: 10px;
+  border: 0.5px solid #acb0b7;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .keypad-key {
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
-  height: 42px;
+  height: 38px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1071,14 +1096,14 @@ body {
 }
 
 .keypad-key__number {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 400;
   color: #000000;
   line-height: 1;
 }
 
 .keypad-key__letters {
-  font-size: 0.58rem;
+  font-size: 0.55rem;
   color: #000000;
   font-weight: 500;
   margin-top: 1px;
@@ -1092,7 +1117,7 @@ body {
 }
 
 .keypad-key--no-letters .keypad-key__number {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
 }
 
 /* Special keys */
@@ -1103,21 +1128,6 @@ body {
 
 .keypad-key--special:active {
   background-color: #a7acb4;
-}
-
-/* Add padding at the bottom of the form when the keypad is open */
-.transfer-main-pad {
-  height: 100vh;
-  height: 100dvh;
-  min-height: auto;
-  overflow: hidden;
-  padding-top: 0.75rem;
-  box-sizing: border-box;
-  transition: padding-bottom 0.2s ease;
-}
-
-.transfer-main-pad--with-keyboard {
-  padding-bottom: 200px;
 }
 
 /* ============================================================
