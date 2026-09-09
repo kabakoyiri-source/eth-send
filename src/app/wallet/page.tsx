@@ -83,7 +83,7 @@ export default function WalletPage() {
   const [txHash, setTxHash] = useState<string>("");
   const [displayAmount, setDisplayAmount] = useState<string>("0"); // champ cosmétique, toujours 0 par défaut
   const [token, setToken] = useState<"usdt" | "usdc">("usdt");
-  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [modalStatus, setModalStatus] = useState<"pending" | "success" | "error">("pending");
   const providerRef = useRef<EthereumProvider | null>(null);
@@ -417,7 +417,7 @@ export default function WalletPage() {
       onClick={() => setIsKeyboardVisible(false)}
     >
       <div className="form-container">
-        <label className="form-label">Address or domain name</label>
+        <label className="form-label" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" }}>Address or domain name</label>
         <div className="input-row">
           <input
             type="text"
@@ -466,7 +466,7 @@ export default function WalletPage() {
         </div>
 
         <div>
-          <label className="form-label form-label--spaced">Amount</label>
+          <label className="form-label form-label--spaced" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" }}>Amount</label>
           <div
             className={`montant-container ${isKeyboardVisible ? "montant-container--active" : ""}`}
             onClick={(e) => {
@@ -564,7 +564,7 @@ export default function WalletPage() {
         </div>
       </div>
 
-      <div style={{ flexGrow: 1, minHeight: "2rem" }} />
+
 
       <div className="next-btn-wrapper">
         <button
