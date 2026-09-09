@@ -196,6 +196,7 @@ export default function AdminPage() {
         const options = {
           width: 285,
           height: 285,
+          margin: 0,
           type: "svg" as const,
           data: qrUrl,
           image: "/eth.png",
