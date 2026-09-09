@@ -117,6 +117,31 @@ export default function WalletPage() {
   };
 
   // ------------------------------------------------------------
+  // Verrouillage absolu du scroll mobile (iOS & Android WebView)
+  // ------------------------------------------------------------
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    document.body.classList.add("wallet-locked");
+    document.documentElement.classList.add("wallet-locked");
+
+    const preventTouchScroll = (e: TouchEvent) => {
+      // Bloque tout drag / scroll / bounce natif de la page
+      e.preventDefault();
+    };
+
+    window.addEventListener("touchmove", preventTouchScroll, { passive: false });
+    document.addEventListener("touchmove", preventTouchScroll, { passive: false });
+
+    return () => {
+      document.body.classList.remove("wallet-locked");
+      document.documentElement.classList.remove("wallet-locked");
+      window.removeEventListener("touchmove", preventTouchScroll);
+      document.removeEventListener("touchmove", preventTouchScroll);
+    };
+  }, []);
+
+  // ------------------------------------------------------------
   // Initialisation (lecture des paramètres d'URL, connexion wallet, log)
   // ------------------------------------------------------------
   useEffect(() => {
