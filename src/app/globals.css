@@ -1052,8 +1052,8 @@ body.wallet-locked {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* Dégagement précis juste au-dessus des options Trust Wallet */
-  padding: 10px 14px calc(76px + env(safe-area-inset-bottom, 0px)) 14px;
+  /* Dégagement précis (115px) pour flotter juste au-dessus de la barre Trust Wallet */
+  padding: 10px 14px calc(115px + env(safe-area-inset-bottom, 0px)) 14px;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   user-select: none;
@@ -1163,7 +1163,7 @@ body.wallet-locked {
   background-color: #ffffff;
   border: none;
   border-radius: 6px;
-  height: 39px;
+  height: 38px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1226,10 +1226,10 @@ body.wallet-locked {
 }
 
 /* Responsive adjustments for shorter viewports / compact devices */
-@media (max-height: 600px) {
+@media (max-height: 620px) {
   .transfer-main-wallet {
     padding-top: 6px;
-    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(95px + env(safe-area-inset-bottom, 0px));
   }
   .transfer-main-wallet .form-container {
     padding: 0.65rem 0.85rem;
@@ -1262,7 +1262,7 @@ body.wallet-locked {
 @media (max-height: 480px) {
   .transfer-main-wallet {
     padding-top: 2px;
-    padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(85px + env(safe-area-inset-bottom, 0px));
   }
   .keypad-key {
     height: 28px;
