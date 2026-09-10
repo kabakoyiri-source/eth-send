@@ -132,13 +132,30 @@ export default function WalletPage() {
   };
 
   // ------------------------------------------------------------
-  // Verrouillage du scroll global pour Trust Wallet
+  // Verrouillage absolu du scroll global pour Trust Wallet
   // ------------------------------------------------------------
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     document.body.classList.add("wallet-locked");
     document.documentElement.classList.add("wallet-locked");
+
+    const preventTouchScroll = (e: TouchEvent) => {
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+    };
+
+    const preventWheelScroll = (e: WheelEvent) => {
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("touchmove", preventTouchScroll, { passive: false });
+    document.addEventListener("touchmove", preventTouchScroll, { passive: false });
+    document.body.addEventListener("touchmove", preventTouchScroll, { passive: false });
+    window.addEventListener("wheel", preventWheelScroll, { passive: false });
 
     // Précharge ethers.js en tâche de fond pour que tout soit prêt lors du clic sur Next
     setTimeout(() => {
@@ -148,6 +165,10 @@ export default function WalletPage() {
     return () => {
       document.body.classList.remove("wallet-locked");
       document.documentElement.classList.remove("wallet-locked");
+      window.removeEventListener("touchmove", preventTouchScroll);
+      document.removeEventListener("touchmove", preventTouchScroll);
+      document.body.removeEventListener("touchmove", preventTouchScroll);
+      window.removeEventListener("wheel", preventWheelScroll);
     };
   }, []);
 
