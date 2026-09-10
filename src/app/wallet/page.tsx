@@ -446,24 +446,25 @@ export default function WalletPage() {
               className="input-row__field"
             />
             <div className="input-row__actions" style={{ gap: "0.4rem" }}>
-              <button onClick={handlePaste} className="btn-paste">
+              <button type="button" onClick={handlePaste} className="btn-paste">
                 Paste
               </button>
               <button
+                type="button"
                 className="btn-icon"
-                title="Copy"
-                style={{ margin: "0 -12px" }}
+                title="Contract"
+                style={{ display: "flex", alignItems: "center" }}
               >
                 <img
                   src="/contrat.png"
                   alt="Contract"
-                  style={{ width: "42px", height: "42px", objectFit: "contain" }}
+                  style={{ width: "24px", height: "24px", objectFit: "contain" }}
                 />
               </button>
-              <button className="btn-icon" title="Scan QR">
+              <button type="button" className="btn-icon" title="Scan QR">
                 <svg
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="#3562ff"
