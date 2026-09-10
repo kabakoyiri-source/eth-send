@@ -1050,11 +1050,10 @@ body.wallet-locked {
   background: #f8fafc;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 6px;
-  /* Clearance for Trust Wallet mobile bottom bar */
-  padding: 8px 12px calc(80px + env(safe-area-inset-bottom, 0px)) 12px;
+  /* Dégagement précis juste au-dessus des options Trust Wallet */
+  padding: 10px 14px calc(76px + env(safe-area-inset-bottom, 0px)) 14px;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   user-select: none;
@@ -1065,64 +1064,75 @@ body.wallet-locked {
   max-width: 440px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   flex-shrink: 0;
 }
 
 .transfer-main-wallet .form-container {
-  padding: 0.65rem 0.85rem;
-  border-radius: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .transfer-main-wallet .form-label {
-  font-size: 0.82rem;
-  margin-bottom: 0.2rem;
+  font-size: 0.86rem;
+  color: #475569;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
 }
 
 .transfer-main-wallet .form-label--spaced {
-  margin-top: 0.4rem;
+  margin-top: 0.65rem;
 }
 
 .transfer-main-wallet .input-row {
-  padding: 0.4rem 0.65rem;
-  border-radius: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
 }
 
 .transfer-main-wallet .input-row__field {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
 }
 
 .transfer-main-wallet .btn-paste {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
 }
 
 .transfer-main-wallet .montant-container {
-  padding: 0.45rem 0.75rem;
-  border-radius: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
 }
 
 .transfer-main-wallet .montant-input-wrapper {
-  min-height: 22px;
+  min-height: 24px;
 }
 
 .transfer-main-wallet .montant-display-value {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
 }
 
 .transfer-main-wallet .approx-price {
-  margin-top: 0.2rem !important;
-  font-size: 0.76rem !important;
+  margin-top: 0.3rem !important;
+  font-size: 0.8rem !important;
 }
 
 .transfer-main-wallet .next-btn-wrapper {
-  padding: 0.25rem 0 0.1rem 0;
+  padding: 0.4rem 0 0 0;
 }
 
 .transfer-main-wallet .next-btn {
-  height: 42px;
-  padding: 0.4rem 1.25rem;
-  font-size: 0.95rem;
-  border-radius: 1.5rem;
+  height: 46px;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(53, 98, 255, 0.25);
 }
 
 /* ============================================================
@@ -1132,35 +1142,35 @@ body.wallet-locked {
   position: relative;
   width: 100%;
   max-width: 440px;
-  background-color: #d2d5db;
-  padding: 3px;
-  border-radius: 10px;
+  background-color: #d1d5db;
+  padding: 4px;
+  border-radius: 12px;
   border: 0.5px solid #acb0b7;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
+  gap: 4px;
   box-sizing: border-box;
   flex-shrink: 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   touch-action: manipulation !important;
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
-  margin-top: 2px;
+  margin-top: auto;
 }
 
 .keypad-key {
   background-color: #ffffff;
   border: none;
-  border-radius: 5px;
-  height: 35px;
+  border-radius: 6px;
+  height: 39px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.05s ease;
-  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.28);
   outline: none;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
@@ -1175,7 +1185,7 @@ body.wallet-locked {
 }
 
 .keypad-key__number {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 400;
   color: #000000;
   line-height: 1;
@@ -1185,12 +1195,12 @@ body.wallet-locked {
 }
 
 .keypad-key__letters {
-  font-size: 0.5rem;
-  color: #000000;
+  font-size: 0.54rem;
+  color: #111827;
   font-weight: 500;
   margin-top: 1px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   pointer-events: none;
   user-select: none;
   -webkit-user-select: none;
@@ -1202,13 +1212,13 @@ body.wallet-locked {
 }
 
 .keypad-key--no-letters .keypad-key__number {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
 }
 
 /* Special keys */
 .keypad-key--special {
   background-color: #b9bec6; /* iOS grey button background */
-  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.28);
 }
 
 .keypad-key--special:active {
@@ -1216,50 +1226,43 @@ body.wallet-locked {
 }
 
 /* Responsive adjustments for shorter viewports / compact devices */
-@media (max-height: 640px) {
+@media (max-height: 600px) {
   .transfer-main-wallet {
-    padding-top: 4px;
-    padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding-top: 6px;
+    padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px));
   }
   .transfer-main-wallet .form-container {
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.75rem;
-  }
-  .transfer-main-wallet .form-label {
-    font-size: 0.78rem;
-    margin-bottom: 0.15rem;
+    padding: 0.65rem 0.85rem;
+    border-radius: 10px;
   }
   .transfer-main-wallet .form-label--spaced {
-    margin-top: 0.3rem;
+    margin-top: 0.4rem;
   }
   .transfer-main-wallet .input-row {
-    padding: 0.35rem 0.55rem;
+    padding: 0.4rem 0.65rem;
   }
   .transfer-main-wallet .montant-container {
-    padding: 0.35rem 0.65rem;
-  }
-  .transfer-main-wallet .next-btn-wrapper {
-    padding: 0.2rem 0 0.1rem 0;
+    padding: 0.45rem 0.65rem;
   }
   .transfer-main-wallet .next-btn {
-    height: 38px;
-    font-size: 0.9rem;
+    height: 40px;
+    font-size: 0.95rem;
   }
   .keypad-key {
-    height: 32px;
+    height: 33px;
   }
   .keypad-key__number {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
   .keypad-key__letters {
-    font-size: 0.46rem;
+    font-size: 0.48rem;
   }
 }
 
-@media (max-height: 500px) {
+@media (max-height: 480px) {
   .transfer-main-wallet {
     padding-top: 2px;
-    padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px));
   }
   .keypad-key {
     height: 28px;
